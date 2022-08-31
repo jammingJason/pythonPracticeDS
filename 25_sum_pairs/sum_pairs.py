@@ -21,3 +21,11 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+    new_list = []
+    for num in nums:
+        for digit in nums:
+            if num + digit == goal:
+                new_list.append(num)
+                new_list.append(digit)
+                return tuple(new_list)
+    # print (new_list)

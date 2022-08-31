@@ -11,3 +11,16 @@ def remove_every_other(lst):
         >>> lst
         [1, 2, 3, 4, 5]
     """
+    new_list = lst.copy()
+    count = 0
+    for item in lst:
+        if count == 1:
+            new_list.remove(item)
+            count = 0
+        else:
+            count = 1
+    return (new_list)
+
+
+
+# lst = [1, 2, 3, 4, 5]

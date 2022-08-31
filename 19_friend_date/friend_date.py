@@ -20,4 +20,8 @@ def friend_date(a, b):
     sauron = ('Sauron', 5000, ['killing hobbits', 'chess'])
     gandalf = ('Gandalf', 10000, ['waving wands', 'chess'])
     
-    print (a)
+    for item in a[2]:
+        for other_item in b[2]:
+            if item == other_item:
+                return True
+    return False
