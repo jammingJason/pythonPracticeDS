@@ -22,3 +22,10 @@ def valid_parentheses(parens):
         >>> valid_parentheses(")()(")
         False
     """
+    list(parens)
+    if parens[0] != '(':
+        return False
+    elif len(parens) % 2 != 0:
+        return False
+    else:
+        return True

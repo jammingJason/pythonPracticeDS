@@ -31,8 +31,23 @@ def includes(collection, sought, start=None):
         True
     """
     # includes(collection, sought, start=None):
-    for item in collection:
-        if item == sought:
-            return True
-        else:
+    if isinstance(collection, dict):
+        for item in collection:
+            if collection.get(item) == sought:
+                return True
+        return False
+    elif isinstance(collection, set):
+        for item in collection:
+            if item == sought:
+                return True
             return False
+    else:
+        count = 0
+        for item in collection:
+            if count > start:
+                print(count)
+                if str(item) == str(sought):
+                    return True             
+                    print(item + ' - ' + sought)
+            count = count + 1
+        return False
