@@ -19,3 +19,26 @@ def reverse_vowels(s):
     reverse_vowels("why try, shy fly?")
     'why try, shy fly?''
     """
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    dict_vowels = []
+    str_s = s
+    count = 0
+    for char in s:
+        for vow in vowels:
+            if count < len(str_s):
+                str_s = (str_s.replace(vow, '!'))
+                count += 1
+            if vow == char:
+                dict_vowels.append(char)
+    dict_vowels.reverse()
+
+    count = 0
+    new_str = str_s
+    for char in s:
+        for vow in dict_vowels:
+            if count < len(str_s):
+                new_str = (new_str.replace("!", vow, 1))
+                count += 1
+            # if vow == char:
+            #     dict_vowels.append(char)
+    return (new_str)
